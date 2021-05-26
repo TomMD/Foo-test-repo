@@ -3,7 +3,7 @@ name: Test
 on: push
 
 jobs:
-    comment_on_pr:
+  comment_on_pr:
     name: Test Thing
     runs-on: ubuntu-latest
     steps:
