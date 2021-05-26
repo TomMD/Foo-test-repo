@@ -9,10 +9,8 @@ jobs:
     steps:
         - name: Do thing
           uses: actions/github-script@v4
-          env:
-            SHA_SRC: '${{env.GITHUB_SHA}}'
           with:
             script: |
-                const {SHA_SRC} = process.env
-                console.log('Value: ' + SHA_SRC)
+                const {GITHUB_SHA} = process.env
+                console.log('Value: ' + GITHUB_SHA)
                 console.log(process.env)
