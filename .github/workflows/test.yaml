@@ -1,0 +1,17 @@
+name: Test
+
+on: push
+
+jobs:
+    comment_on_pr:
+    name: Test Thing
+    runs-on: ubuntu-latest
+    steps:
+        - name: Do thing
+          uses: actions/github-script@v4
+          env:
+            SHA_SRC: '${{env.GITHUB_SHA}}'
+          with:
+            script: |
+                const {SHA_SRC} = process.env
+                console.log('Value: ' + `${SHA_SRC}`)
